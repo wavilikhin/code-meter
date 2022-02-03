@@ -1,4 +1,5 @@
 export interface SearchCriteria {
-  ext: string;
-  ignorePath?: string;
+  ext: string[];
+  fileNames?: string[];
+  ignorePaths?: string[];
 }

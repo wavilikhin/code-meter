@@ -1,23 +1,22 @@
-import { readFileSync } from 'fs';
-import { SearchCriteria } from 'types';
-import { findDirsAndFiles } from './utils/findDirsAndFiles';
+import { searchFiles, generateReport } from './utils';
 
-const PROJECT_ROOT = '/Users/vvavilikhin/Dev/macys/hss';
-const searchFolders = ['src/pages/PDP'];
+const searchPaths = [
+  './repos/pre-refactoring/src/shared/components',
+  './repos/pre-refactoring/src/pages/PDP',
+  './repos/pre-refactoring/src/pages/CDP',
+  './repos/pre-refactoring/src/pages/PLP',
+];
 
-const searchFiles = async (searchCriteria: SearchCriteria) => {
-  // Проходимся рекурсивно по папкам
-  //   Отсеиваем ненужное
-  const [dirs, files] = await findDirsAndFiles(PROJECT_ROOT, searchFolders[0]);
+try {
+  const files = await searchFiles(searchPaths, {
+    ext: ['.tsx'],
+    ignorePaths: ['.test', 'types.', '__mocks__'],
+  });
 
-  console.log(dirs, files);
-};
+  await generateReport(files);
 
-const result = await searchFiles({ ext: '.tsx' });
-
-const file = readFileSync(`./index.tsx`, { encoding: 'utf8' }).replace(
-  /\s/g,
-  ''
-);
-// Count occurences
-console.log(file.match(/import/gm).length);
+  process.exit(0);
+} catch (error) {
+  console.error(error);
+  process.exit(1);
+}

@@ -2,9 +2,9 @@ import { readdir as rd, stat as st } from 'fs';
 import { promisify } from 'util';
 const readdir = promisify(rd);
 const stat = promisify(st);
-export const findDirsAndFiles = async (root, searchPath) => {
-    const allFiles = await readdir(`${root}/${searchPath}`);
-    const allFilesPaths = allFiles.map((file) => `${root}/${searchPath}/${file}`);
+export const findDirsAndFiles = async (searchPath) => {
+    const allFiles = await readdir(`${searchPath}`);
+    const allFilesPaths = allFiles.map((file) => `${searchPath}/${file}`);
     const dirs = [];
     for (const filePath of allFilesPaths) {
         const fileStats = await stat(filePath);
