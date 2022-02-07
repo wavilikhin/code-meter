@@ -7,8 +7,9 @@ const searchPaths = [
 ];
 try {
     const files = await searchFiles(searchPaths, {
-        ext: ['.tsx'],
-        ignorePaths: ['.test', 'type.', 'types.', '__mocks__'],
+        fileNames: ['type', 'types'],
+        // ext: ['.tsx'],
+        // ignorePaths: ['.test', 'type.', 'types.', '__mocks__'],
     });
     await generateReport(files);
     process.exit(0);

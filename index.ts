@@ -9,6 +9,7 @@ const searchPaths = [
 
 try {
   const files = await searchFiles(searchPaths, {
+    fileNames: ['type', 'types'],
     ext: ['.tsx'],
     ignorePaths: ['.test', 'type.', 'types.', '__mocks__'],
   });

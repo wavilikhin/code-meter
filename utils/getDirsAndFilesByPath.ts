@@ -12,7 +12,9 @@ export const getDirsAndFilesByPath = async (
   searchPath: string,
   searchCriteria: SearchCriteria
 ) => {
-  const ignorePaths = [...searchCriteria.ignorePaths, ...defaultIgnorePaths];
+  const ignorePaths = searchCriteria.ignorePaths
+    ? [...searchCriteria.ignorePaths, ...defaultIgnorePaths]
+    : defaultIgnorePaths;
 
   for (const path of ignorePaths) {
     if (searchPath.match(path)) {
@@ -35,11 +37,24 @@ export const getDirsAndFilesByPath = async (
       continue;
     }
 
-    if (!searchCriteria.ext.some((e) => e === extname(filePath))) {
+    if (
+      searchCriteria.ext &&
+      !searchCriteria.ext.some((e) => e === extname(filePath))
+    ) {
       continue;
     }
 
-    if (searchCriteria.ignorePaths.some((p) => filePath.match(p))) {
+    if (
+      searchCriteria.fileNames &&
+      !searchCriteria.fileNames.some((n) => filePath.split('/').at(-1).match(n))
+    ) {
+      continue;
+    }
+
+    if (
+      searchCriteria.ignorePaths &&
+      searchCriteria.ignorePaths.some((p) => filePath.match(p))
+    ) {
       continue;
     }
 
