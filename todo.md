@@ -1,2 +1,2 @@
-[] - Перенести searhCriteria в searchFiles
+[x] - Перенести searhCriteria в searchFiles
 [] - Создать репорт с количеством типов

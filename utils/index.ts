@@ -1,4 +1,4 @@
-export { findDirsAndFiles } from './findDirsAndFiles';
+export { getDirsAndFilesByPath } from './getDirsAndFilesByPath';
 export { generateReport } from './generateReport';
 export { parseFolderPaths } from './parseFolderPaths';
 export { parseArgs } from './parseArgs';
