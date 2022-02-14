@@ -1,0 +1,18 @@
+{
+  "data": {
+    "./repos/pre-refactoring/src/pages/CDP/components/ProductCardSwatches/index.tsx": 1,
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductDetails/index.tsx": 3,
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductDetails/types.ts": 1,
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductImageModel/ImageModel/index.tsx": 1,
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductSize/index.tsx": 1,
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductType/index.tsx": 1,
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductZipcode/index.tsx": 2,
+    "./repos/pre-refactoring/src/pages/PLP/components/ProductList/index.tsx": 1,
+    "./repos/pre-refactoring/src/shared/components/ProductSwatches/index.tsx": 1,
+    "./repos/pre-refactoring/src/shared/types/Store.ts": 1,
+    "./repos/pre-refactoring/src/shared/utils/index.ts": 1,
+    "./repos/pre-refactoring/src/store/index.ts": 2,
+    "./repos/pre-refactoring/src/store/slices/products/types.ts": 3
+  },
+  "entries": 13
+}

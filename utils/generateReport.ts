@@ -9,7 +9,10 @@ export const generateReport = async (
 ) => {
   await writeFile(
     path,
-    JSON.stringify({ data: dataObject, length: dataObject.length }),
+    JSON.stringify({
+      data: dataObject,
+      entries: Object.keys(dataObject).length,
+    }),
     options
   );
 };

@@ -1,31 +1,37 @@
-import {
-  searchFiles,
-  countContentByPaths,
-  generateReport,
-  getContentByPath,
-} from './utils';
+import { findMatchesByPath } from './src/findMatches';
+import { searchFiles, generateReport } from './utils';
 
 const start = performance.now();
 
-const searchPaths = [
-  './repos/pre-refactoring/src/shared/components',
-  './repos/pre-refactoring/src/pages/PDP',
-  './repos/pre-refactoring/src/pages/CDP',
-  './repos/pre-refactoring/src/pages/PLP',
-];
+// Check why it doesnt collect from test-utils
+const searchPaths = ['./repos'];
+
+// const searchPaths = [
+//   './repos/pre-refactoring/src/shared/components',
+//   './repos/pre-refactoring/src/pages/PDP',
+//   './repos/pre-refactoring/src/pages/CDP',
+//   './repos/pre-refactoring/src/pages/PLP',
+// ];
 
 try {
   const files = await searchFiles(searchPaths, {
-    // fileNames: ['type.', 'types.'],
-    ext: ['.tsx'],
-    ignorePaths: ['.test', 'type.', 'types.', '__mocks__'],
+    ext: ['.tsx', '.ts'],
+    ignorePaths: ['__mocks__'],
   });
 
-  const contentLenghByPaths = await countContentByPaths(files);
+  const matches = await findMatchesByPath(files, {
+    searchPatterns: [':any'],
+  });
 
-  console.log(contentLenghByPaths);
+  let filtred = {};
+  for (const key of Object.keys(matches)) {
+    if (matches[key][':any'] > 0) {
+      //   @ts-ignore
+      filtred[key] = matches[key][':any'];
+    }
+  }
 
-  await generateReport(contentLenghByPaths);
+  await generateReport(filtred, 'matches.json');
 
   const stop = performance.now();
   const inSeconds = (stop - start) / 1000;

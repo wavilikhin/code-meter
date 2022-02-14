@@ -5,3 +5,4 @@ export { parseFolderPaths } from './parseFolderPaths';
 export { parseArgs } from './parseArgs';
 export { searchFiles } from './searchFiles';
 export { countContentByPaths } from './countContentByPaths';
+export { findMatches } from './findMatches';
