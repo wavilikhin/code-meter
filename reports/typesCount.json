@@ -1,0 +1,27 @@
+{
+  "data": [
+    "./repos/pre-refactoring/src/shared/components/Breadcrumbs/type.ts",
+    "./repos/pre-refactoring/src/shared/components/Header/types.ts",
+    "./repos/pre-refactoring/src/shared/components/ProductCard/types.ts",
+    "./repos/pre-refactoring/src/shared/components/ProductPrice/types.ts",
+    "./repos/pre-refactoring/src/shared/components/ProductSearch/types.ts",
+    "./repos/pre-refactoring/src/shared/components/ProductSwatches/types.ts",
+    "./repos/pre-refactoring/src/pages/PDP/components/AdditionalInformationDrawer/types.ts",
+    "./repos/pre-refactoring/src/pages/PDP/components/ComponentSKUs/types.ts",
+    "./repos/pre-refactoring/src/pages/PDP/components/DeliveryMethodAdditionalInfo/types.tsx",
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductColors/types.ts",
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductDescription/types.ts",
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductDetails/types.ts",
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductDetails/ProductSkuType/type.tsx",
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductGallery/types.ts",
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductImageModel/types.tsx",
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductSize/types.ts",
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductType/types.ts",
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductZipcode/type.tsx",
+    "./repos/pre-refactoring/src/pages/PDP/components/Schematics/types.ts",
+    "./repos/pre-refactoring/src/pages/CDP/components/CollectionProductCard/types.ts",
+    "./repos/pre-refactoring/src/pages/CDP/components/ProductCardSwatches/types.ts",
+    "./repos/pre-refactoring/src/pages/CDP/components/ProductImagesCarousel/types.ts"
+  ],
+  "length": 22
+}

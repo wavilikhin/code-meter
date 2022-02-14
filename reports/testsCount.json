@@ -1,0 +1,22 @@
+{
+  "data": [
+    "./repos/pre-refactoring/src/shared/components/Footer/index.test.tsx",
+    "./repos/pre-refactoring/src/shared/components/Footer/__snapshots__/index.test.tsx.snap",
+    "./repos/pre-refactoring/src/shared/components/Header/index.test.tsx",
+    "./repos/pre-refactoring/src/shared/components/ProductPrice/DeferredBilling/index.test.tsx",
+    "./repos/pre-refactoring/src/shared/components/ProductPrice/SitePricing/index.test.tsx",
+    "./repos/pre-refactoring/src/shared/components/ProductPrice/StorePricing/index.test.tsx",
+    "./repos/pre-refactoring/src/shared/components/ProductSearch/index.test.tsx",
+    "./repos/pre-refactoring/src/shared/components/SearchDrawer/index.test.tsx",
+    "./repos/pre-refactoring/src/pages/PDP/index.test.tsx",
+    "./repos/pre-refactoring/src/pages/PDP/components/AdditionalInformationDrawer/index.test.tsx",
+    "./repos/pre-refactoring/src/pages/PDP/components/ComponentSKUs/index.test.tsx",
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductDeliveryMethods/index.test.tsx",
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductDescription/index.test.tsx",
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductDimensions/index.test.tsx",
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductGallery/index.test.tsx",
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductZipcode/index.test.tsx",
+    "./repos/pre-refactoring/src/pages/CDP/index.test.tsx"
+  ],
+  "length": 17
+}
