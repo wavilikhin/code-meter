@@ -3,16 +3,9 @@ import { promisify } from 'util';
 const writeFile = promisify(wf);
 
 export const generateReport = async (
-  dataObject: any,
+  dataObject: Record<string, unknown>,
   path: string = './report.json',
   options?: WriteFileOptions
 ) => {
-  await writeFile(
-    path,
-    JSON.stringify({
-      data: dataObject,
-      entries: Object.keys(dataObject).length,
-    }),
-    options
-  );
+  await writeFile(path, JSON.stringify(dataObject), options);
 };

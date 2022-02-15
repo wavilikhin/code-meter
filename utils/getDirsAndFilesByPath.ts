@@ -2,19 +2,18 @@ import { SearchCriteria } from 'types';
 import { readdir as rd, stat as st } from 'fs';
 import { promisify } from 'util';
 import { extname } from 'path';
+import { GLOBAL_IGNORE_PATHS } from '../constants';
 
 const readdir = promisify(rd);
 const stat = promisify(st);
-
-const defaultIgnorePaths = ['node_modules', 'dist'];
 
 export const getDirsAndFilesByPath = async (
   searchPath: string,
   searchCriteria: SearchCriteria
 ) => {
   const ignorePaths = searchCriteria.ignorePaths
-    ? [...searchCriteria.ignorePaths, ...defaultIgnorePaths]
-    : defaultIgnorePaths;
+    ? [...searchCriteria.ignorePaths, ...GLOBAL_IGNORE_PATHS]
+    : GLOBAL_IGNORE_PATHS;
 
   for (const path of ignorePaths) {
     if (searchPath.match(path)) {

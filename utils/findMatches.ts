@@ -11,8 +11,6 @@ export const findMatches = async (paths: string[], config: Config) => {
     const content = await getContentByPath(path);
 
     for (const searchPattern of config.searchPatterns) {
-      // TODO: fix to match exact
-      //   const matches = content.match(new RegExp('\b${searchPattern}\b', 'gm'));
       const matches = content.match(
         new RegExp('\\b' + searchPattern + '\\b', 'gm')
       );

@@ -6,5 +6,5 @@ const readFile = promisify(rf);
 export const getContentByPath = async (path: string) => {
   const fileContent = await readFile(path, 'utf-8');
 
-  return fileContent.replace(/\s/gm, '');
+  return fileContent;
 };

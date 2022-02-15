@@ -3,8 +3,8 @@ export const parseArgs = () => {
     return args.slice(2, args.length).map((arg) => {
         let a = arg.replace(/--/g, '');
         const name = a.split('=')[0];
-        const value = a.split('=')[1];
-        return { name, value };
+        const values = a.split('=')[1].split(',');
+        return { name, values };
     });
 };
 //# sourceMappingURL=parseArgs.js.map
