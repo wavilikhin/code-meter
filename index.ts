@@ -1,30 +1,50 @@
-import { readdir, loadScenario } from './utils';
+import { readdir, loadScenario, generateQuestions } from './utils';
 const SCENARIOS_PATH = './src/scenarios';
-import * as prompts from 'prompts';
-
+import prompt from 'prompts';
 const scenarios = await readdir(SCENARIOS_PATH);
 
-const questions: { scenario: string; questions: prompts.PromptObject[] }[] = [
-  //   {
-  //     type: 'text',
-  //     name: 'about',
-  //     message: 'Tell something about yourself',
-  //     initial: 'Why should I?',
-  //   },
-];
+// Запускаю все фунции в промис ол сетлед
+// В конце показываю результат ок\не ок
+
+const scenariosRunData = [];
+
+const commons = ['searchPaths'];
+
+const commonDataQuestions: prompt.PromptObject[] = commons.map((c) => ({
+  type: 'list',
+  name: c,
+  message: `Provide ${c} to run any scenario`,
+  validate: (v) => (!v ? `${c} is required` : true),
+}));
+
+const commonData = await prompt(commonDataQuestions);
 
 for await (const scenario of scenarios) {
   const scenarioName = scenario.split('.')[0];
 
   const [main, inputParams] = await loadScenario(scenarioName);
 
-  // Создать функцию которпая по объекту будет создавать массив вопросов формата prompts.PromptObject[]
-  const questions;
+  const questions = generateQuestions(scenarioName, inputParams);
 
-  questions.push({
-    scenario: scenarioName,
-    questions: [],
+  const filtredQuestions = questions.filter(
+    (q) => !commons.some((d) => d === q.name)
+  );
+
+  const response = await prompt(filtredQuestions);
+
+  scenariosRunData.push({
+    scenarioName,
+    inputData: { ...response, ...commonData },
+    main,
   });
-
-  console.log(inputParams);
 }
+
+let promises = [];
+
+for (const scenario of scenariosRunData) {
+  promises.push(scenario.main(scenario.inputData));
+}
+
+const res = await Promise.allSettled(promises);
+
+console.log(res);

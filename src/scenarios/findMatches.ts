@@ -20,6 +20,7 @@ export const inputParams: InputParams = {
 };
 
 export const main = async (params: Params) => {
+  console.log(params);
   const {
     searchPaths,
     searchPatterns,

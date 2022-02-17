@@ -1,11 +1,13 @@
 const SCENARIOS_PATH = '../src/scenarios';
 
-type Output = [
-  main: () => Promise<void>,
-  inputParams: {
-    required: string[];
-    optional?: string[];
-  }
+interface InputParams {
+  required: string[];
+  optional?: string[];
+}
+
+export type Output = [
+  main: (params: Record<string, unknown>) => Promise<void>,
+  inputParams: InputParams
 ];
 
 export const loadScenario = async (scenarioName: string) => {

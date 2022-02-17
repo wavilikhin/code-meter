@@ -1,12 +1,34 @@
-import { readdir, loadScenario } from './utils';
+import { readdir, loadScenario, generateQuestions } from './utils';
 const SCENARIOS_PATH = './src/scenarios';
+import prompt from 'prompts';
 const scenarios = await readdir(SCENARIOS_PATH);
-console.log('1');
+// Запускаю все фунции в промис ол сетлед
+// В конце показываю результат ок\не ок
+const scenariosRunData = [];
+const commons = ['searchPaths'];
+const commonDataQuestions = commons.map((c) => ({
+    type: 'list',
+    name: c,
+    message: `Provide ${c} to run any scenario`,
+    validate: (v) => (!v ? `${c} is required` : true),
+}));
+const commonData = await prompt(commonDataQuestions);
 for await (const scenario of scenarios) {
     const scenarioName = scenario.split('.')[0];
-    console.log('2');
     const [main, inputParams] = await loadScenario(scenarioName);
-    console.log(inputParams);
+    const questions = generateQuestions(scenarioName, inputParams);
+    const filtredQuestions = questions.filter((q) => !commons.some((d) => d === q.name));
+    const response = await prompt(filtredQuestions);
+    scenariosRunData.push({
+        scenarioName,
+        inputData: { ...response, ...commonData },
+        main,
+    });
 }
-console.log('3');
+let promises = [];
+for (const scenario of scenariosRunData) {
+    promises.push(scenario.main(scenario.inputData));
+}
+const res = await Promise.allSettled(promises);
+console.log(res);
 //# sourceMappingURL=index.js.map
