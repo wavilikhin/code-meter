@@ -6,3 +6,5 @@ export { parseArgs } from './parseArgs';
 export { searchFiles } from './searchFiles';
 export { countContentByPaths } from './countContentByPaths';
 export { findMatches } from './findMatches';
+export { loadScenario } from './loadScenario';
+export * from './node';

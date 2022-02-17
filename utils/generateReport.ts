@@ -1,6 +1,5 @@
-import { writeFile as wf, WriteFileOptions } from 'fs';
-import { promisify } from 'util';
-const writeFile = promisify(wf);
+import { WriteFileOptions } from 'fs';
+import { writeFile } from './node';
 
 export const generateReport = async (
   dataObject: Record<string, unknown>,

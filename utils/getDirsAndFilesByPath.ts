@@ -1,11 +1,6 @@
 import { SearchCriteria } from 'types';
-import { readdir as rd, stat as st } from 'fs';
-import { promisify } from 'util';
 import { extname } from 'path';
-import { GLOBAL_IGNORE_PATHS } from '../constants';
-
-const readdir = promisify(rd);
-const stat = promisify(st);
+import { readdir, stat } from './node';
 
 export const getDirsAndFilesByPath = async (
   searchPath: string,
