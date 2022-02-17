@@ -7,4 +7,5 @@ export { searchFiles } from './searchFiles';
 export { countContentByPaths } from './countContentByPaths';
 export { findMatches } from './findMatches';
 export { loadScenario } from './loadScenario';
+export { __dirname, __filename } from './dirname';
 export * from './node';
