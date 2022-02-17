@@ -11,17 +11,24 @@ export const findMatches = async (paths: string[], config: Config) => {
     const content = await getContentByPath(path);
 
     for (const searchPattern of config.searchPatterns) {
-      const matches = content.match(
-        new RegExp('\\b' + searchPattern + '\\b', 'gm')
-      );
+      const matches = content.match(new RegExp(searchPattern, 'gm'));
 
-      if (!contentLengthMap[path]) {
-        contentLengthMap[path] = {};
+      if (
+        path ===
+        './repos/pre-refactoring/src/pages/PDP/components/ProductImageModel/types.tsx'
+      ) {
+        console.log(matches);
       }
 
-      Object.assign(contentLengthMap[path], {
-        [searchPattern]: !!matches ? matches.length : 0,
-      });
+      if (!!matches) {
+        if (!contentLengthMap[path]) {
+          contentLengthMap[path] = {};
+        }
+
+        Object.assign(contentLengthMap[path], {
+          [searchPattern]: matches.length,
+        });
+      }
     }
   }
 

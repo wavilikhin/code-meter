@@ -1,7 +1,15 @@
-import { searchFiles, generateReport, parseArgs, findMatches } from './utils';
-import { GLOBAL_IGNORE_PATHS } from './constants';
+import {
+  searchFiles,
+  generateReport,
+  parseArgs,
+  findMatches,
+} from '../../utils';
+import { GLOBAL_IGNORE_PATHS } from '../../constants';
 
-const start = performance.now();
+export const params = {
+  required: ['searchPaths', 'searchPatterns'],
+  optional: ['fileExtensions', 'fileNames', 'ignorePaths', 'reportName'],
+};
 
 const args = parseArgs();
 
@@ -56,13 +64,7 @@ try {
     },
     reportName
   );
-
-  const stop = performance.now();
-  const inSeconds = (stop - start) / 1000;
-  const rounded = Number(inSeconds).toFixed(3);
-  console.log(`Finded ${Object.keys(matches).length} matches in ${rounded}s`);
-  process.exit(0);
 } catch (error) {
   console.error(error);
-  process.exit(1);
+  throw new Error(error);
 }
