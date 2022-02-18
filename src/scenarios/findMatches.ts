@@ -1,4 +1,9 @@
-import { searchFiles, generateReport, findMatches } from '../../utils';
+import {
+  searchFiles,
+  generateReport,
+  findMatches,
+  filterIngorePaths,
+} from '../../utils';
 import { GLOBAL_IGNORE_PATHS } from '../../constants';
 import { OptionalKeys, RequiredKeys } from 'types';
 interface Params {
@@ -20,22 +25,24 @@ export const inputParams: InputParams = {
 };
 
 export const main = async (params: Params) => {
-  console.log(params);
   const {
     searchPaths,
     searchPatterns,
     fileExtensions = [],
     fileNames = [],
     ignorePaths = [],
-    reportName = 'matches.json',
+    reportName,
   } = params;
 
   try {
+    const filtredIgnorePaths = filterIngorePaths([
+      ...ignorePaths,
+      ...GLOBAL_IGNORE_PATHS,
+    ]);
     const files = await searchFiles(searchPaths, {
-      ext: fileExtensions,
-      //   REFACTOR: Make sure its unique vlaues arr
-      ignorePaths: [...ignorePaths, ...GLOBAL_IGNORE_PATHS],
-      fileNames,
+      ext: fileExtensions.filter((e) => !!e),
+      ignorePaths: filtredIgnorePaths,
+      fileNames: fileNames.filter((e) => !!e),
     });
 
     const matches = await findMatches(files, {
@@ -54,11 +61,12 @@ export const main = async (params: Params) => {
 
     await generateReport(
       {
-        data: matches,
+        searchPaths,
+        ignorePaths: filtredIgnorePaths,
+        searchPatterns,
         entries: Object.keys(matches).length,
         totalCount: matchesCount,
-        searchPaths,
-        ignorePaths,
+        data: matches,
       },
       reportName
     );

@@ -10,4 +10,5 @@ export { loadScenario } from './loadScenario';
 // FIXME
 export { __dirname, __filename } from './dirname';
 export { generateQuestions } from './generateQuestions';
+export { filterIngorePaths } from './filterIgnorePaths';
 export * from './node';

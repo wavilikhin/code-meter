@@ -1,4 +1,16 @@
 {
+  "searchPaths": ["./repos"],
+  "ignorePaths": [
+    "node_modules",
+    "dist",
+    ".git",
+    ".DS_Store",
+    "__mocks__",
+    "__mock__"
+  ],
+  "searchPatterns": [": any"],
+  "entries": 16,
+  "totalCount": { ": any": 25 },
   "data": {
     "./repos/pre-refactoring/src/pages/CDP/components/ProductCardSwatches/index.tsx": {
       ": any": 1
@@ -38,9 +50,5 @@
       ": any": 3
     },
     "./repos/pre-refactoring/src/test-utils/Wrapper.tsx": { ": any": 1 }
-  },
-  "entries": 16,
-  "totalCount": { ": any": 25 },
-  "searchPaths": ["./repos/pre-refactoring/src"],
-  "ignorePaths": ["node_modules", "dist", ".git"]
+  }
 }

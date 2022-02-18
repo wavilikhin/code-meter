@@ -13,13 +13,6 @@ export const findMatches = async (paths: string[], config: Config) => {
     for (const searchPattern of config.searchPatterns) {
       const matches = content.match(new RegExp(searchPattern, 'gm'));
 
-      if (
-        path ===
-        './repos/pre-refactoring/src/pages/PDP/components/ProductImageModel/types.tsx'
-      ) {
-        console.log(matches);
-      }
-
       if (!!matches) {
         if (!contentLengthMap[path]) {
           contentLengthMap[path] = {};

@@ -47,10 +47,12 @@ export const getDirsAndFilesByPath = async (
       searchCriteria.ignorePaths.length &&
       searchCriteria.ignorePaths.some((p) => filePath.match(p))
     ) {
+      console.log('filtering paths');
       continue;
     }
 
     files.push(filePath);
   }
+  console.log(files);
   return [dirs, files];
 };

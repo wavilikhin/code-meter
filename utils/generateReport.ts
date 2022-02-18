@@ -3,8 +3,12 @@ import { writeFile } from './node';
 
 export const generateReport = async (
   dataObject: Record<string, unknown>,
-  path: string = './report.json',
+  name: string,
   options?: WriteFileOptions
 ) => {
-  await writeFile(path, JSON.stringify(dataObject), options);
+  await writeFile(
+    `./${name || 'report'}.json`,
+    JSON.stringify(dataObject),
+    options
+  );
 };

@@ -3,9 +3,6 @@ const SCENARIOS_PATH = './src/scenarios';
 import prompt from 'prompts';
 const scenarios = await readdir(SCENARIOS_PATH);
 
-// Запускаю все фунции в промис ол сетлед
-// В конце показываю результат ок\не ок
-
 const scenariosRunData = [];
 
 const commons = ['searchPaths'];
