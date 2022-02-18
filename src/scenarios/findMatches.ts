@@ -1,5 +1,5 @@
 import {
-  searchFiles,
+  getFiles,
   generateReport,
   findMatches,
   filterIngorePaths,
@@ -39,7 +39,7 @@ export const main = async (params: Params) => {
       ...ignorePaths,
       ...GLOBAL_IGNORE_PATHS,
     ]);
-    const files = await searchFiles(searchPaths, {
+    const files = await getFiles(searchPaths, {
       ext: fileExtensions.filter((e) => !!e),
       ignorePaths: filtredIgnorePaths,
       fileNames: fileNames.filter((e) => !!e),

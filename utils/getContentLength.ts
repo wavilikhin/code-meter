@@ -1,6 +1,6 @@
 import { getContentByPath } from './getContentByPath';
 
-export const countContentByPaths = async (paths: string[]) => {
+export const getContentLength = async (paths: string[]) => {
   const contentLengthMap: Record<string, number> = {};
 
   for (const path of paths) {

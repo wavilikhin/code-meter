@@ -4,13 +4,15 @@ import { readdir, stat } from './node';
 
 export const getDirsAndFilesByPath = async (
   searchPath: string,
-  searchCriteria: SearchCriteria
+  searchCriteria: SearchCriteria = {}
 ) => {
   const { ignorePaths } = searchCriteria;
 
-  for (const path of ignorePaths) {
-    if (searchPath.match(path)) {
-      return [[], []];
+  if (ignorePaths) {
+    for (const path of ignorePaths) {
+      if (searchPath.match(path)) {
+        return [[], []];
+      }
     }
   }
 
