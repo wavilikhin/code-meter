@@ -3,6 +3,7 @@ export const parseFolderPaths = (paths) => {
         return;
     }
     const root = {};
+    //   REFACTOR:
     //   @ts-ignore
     const iterate = (path) => {
         const folders = path.split('/');

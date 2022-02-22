@@ -1,8 +1,8 @@
 import {
   getFiles,
   generateReport,
-  findMatches,
   filterIngorePaths,
+  getContentLength,
 } from '../../utils';
 import { GLOBAL_IGNORE_PATHS } from '../../constants';
 import { OptionalKeys, RequiredKeys } from 'types';
@@ -10,7 +10,6 @@ const filename = new URL('', import.meta.url).pathname.split('/').at(-1);
 
 interface Params {
   searchPaths: string[];
-  searchPatterns: string[];
   fileExtensions?: string[];
   fileNames?: string[];
   ignorePaths?: string[];
@@ -22,14 +21,13 @@ interface InputParams {
 }
 
 export const inputParams: InputParams = {
-  required: ['searchPaths', 'searchPatterns'],
+  required: ['searchPaths'],
   optional: ['fileExtensions', 'fileNames', 'ignorePaths', 'reportName'],
 };
 
 export const main = async (params: Params) => {
   const {
     searchPaths,
-    searchPatterns,
     fileExtensions = [],
     fileNames = [],
     ignorePaths = [],
@@ -41,34 +39,27 @@ export const main = async (params: Params) => {
       ...ignorePaths,
       ...GLOBAL_IGNORE_PATHS,
     ]);
+
     const files = await getFiles(searchPaths, {
       ext: fileExtensions.filter((e) => !!e),
       ignorePaths: filtredIgnorePaths,
       fileNames: fileNames.filter((e) => !!e),
     });
 
-    const matches = await findMatches(files, {
-      searchPatterns,
-    });
+    const lengthsMap = getContentLength(files);
 
-    const matchesCount = Object.entries(matches).reduce((matches, next) => {
-      const [pattern, occurences] = Object.entries(next[1])[0];
-
-      matches[pattern]
-        ? (matches[pattern] += occurences)
-        : (matches[pattern] = occurences);
-
-      return matches;
-    }, {} as Record<string, number>);
+    const lengthsCount = Object.entries(lengthsMap).reduce((curr, next) => {
+      const [_, lenght] = next;
+      return curr + lenght;
+    }, 0);
 
     await generateReport(
       {
         searchPaths,
         ignorePaths: filtredIgnorePaths,
-        searchPatterns,
-        entries: Object.keys(matches).length,
-        totalCount: matchesCount,
-        data: matches,
+        entries: Object.keys(lengthsMap).length,
+        totalCount: lengthsCount,
+        data: lengthsMap,
       },
       reportName
     );

@@ -11,7 +11,10 @@ export const findMatches = async (paths: string[], config: Config) => {
     const content = await getContentByPath(path);
 
     for (const searchPattern of config.searchPatterns) {
-      const matches = content.match(new RegExp(searchPattern, 'gm'));
+      const matches = content.match(
+        // new RegExp('\\b' + searchPattern + '\\b', 'gm')
+        new RegExp(searchPattern, 'gm')
+      );
 
       if (!!matches) {
         if (!contentLengthMap[path]) {

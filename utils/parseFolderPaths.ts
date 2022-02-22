@@ -5,6 +5,7 @@ export const parseFolderPaths = (paths: string[]) => {
 
   const root = {};
 
+  //   REFACTOR:
   //   @ts-ignore
   const iterate = (path: string) => {
     const folders = path.split('/');
