@@ -1,0 +1,91 @@
+{
+  "searchPaths": ["./repos"],
+  "ignorePaths": [
+    "node_modules",
+    "dist",
+    ".git",
+    ".DS_Store",
+    "__mocks__",
+    "__mock__"
+  ],
+  "searchPatterns": ["styled\\("],
+  "entries": 25,
+  "totalCount": { "styled\\(": 72 },
+  "data": {
+    "./repos/pre-refactoring/src/pages/CDP/components/CollectionProductCard/index.tsx": {
+      "styled\\(": 4
+    },
+    "./repos/pre-refactoring/src/pages/CDP/components/ProductCardSwatches/index.tsx": {
+      "styled\\(": 4
+    },
+    "./repos/pre-refactoring/src/pages/CDP/components/ProductImagesCarousel/index.tsx": {
+      "styled\\(": 2
+    },
+    "./repos/pre-refactoring/src/pages/PDP/components/ComponentSKUs/index.tsx": {
+      "styled\\(": 1
+    },
+    "./repos/pre-refactoring/src/pages/PDP/components/DotComProductLink/index.tsx": {
+      "styled\\(": 1
+    },
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductColors/index.tsx": {
+      "styled\\(": 1
+    },
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductDeliveryMethods/index.tsx": {
+      "styled\\(": 3
+    },
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductDetails/index.tsx": {
+      "styled\\(": 5
+    },
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductDetails/ProductSkuType/index.tsx": {
+      "styled\\(": 3
+    },
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductGallery/index.tsx": {
+      "styled\\(": 3
+    },
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductImageModel/index.tsx": {
+      "styled\\(": 4
+    },
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductImageModel/ColorSwatch/index.tsx": {
+      "styled\\(": 6
+    },
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductImageModel/ImageModel/index.tsx": {
+      "styled\\(": 3
+    },
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductImageModel/PrimaryImageModal/index.tsx": {
+      "styled\\(": 1
+    },
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductZipcode/index.tsx": {
+      "styled\\(": 2
+    },
+    "./repos/pre-refactoring/src/shared/components/Breadcrumbs/index.tsx": {
+      "styled\\(": 3
+    },
+    "./repos/pre-refactoring/src/shared/components/Footer/index.tsx": {
+      "styled\\(": 2
+    },
+    "./repos/pre-refactoring/src/shared/components/Header/index.tsx": {
+      "styled\\(": 7
+    },
+    "./repos/pre-refactoring/src/shared/components/ProductCard/index.tsx": {
+      "styled\\(": 2
+    },
+    "./repos/pre-refactoring/src/shared/components/ProductPrice/DeferredBilling/index.tsx": {
+      "styled\\(": 1
+    },
+    "./repos/pre-refactoring/src/shared/components/ProductPrice/SitePricing/index.tsx": {
+      "styled\\(": 4
+    },
+    "./repos/pre-refactoring/src/shared/components/ProductPrice/StorePricing/index.tsx": {
+      "styled\\(": 1
+    },
+    "./repos/pre-refactoring/src/shared/components/ProductSearch/index.tsx": {
+      "styled\\(": 2
+    },
+    "./repos/pre-refactoring/src/shared/components/ProductSwatches/index.tsx": {
+      "styled\\(": 3
+    },
+    "./repos/pre-refactoring/src/shared/components/SearchDrawer/index.tsx": {
+      "styled\\(": 4
+    }
+  }
+}

@@ -1,9 +1,12 @@
-import { getDirsAndFilesByPath } from './';
+import { getDirsAndFilesByPath } from '..';
 import { SearchCriteria } from 'types';
 
-export const searchFiles = async (
+/**
+ *  Recursively searches for all files along the specified paths in accordance with the specified criteria
+ */
+export const getFiles = async (
   searchPaths: string[],
-  searchCriteria: SearchCriteria
+  searchCriteria?: SearchCriteria
 ) => {
   const allFiles: string[] = [];
 

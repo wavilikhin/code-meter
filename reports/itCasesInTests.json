@@ -1,0 +1,76 @@
+{
+  "searchPaths": ["./repos"],
+  "ignorePaths": [
+    "node_modules",
+    "dist",
+    ".git",
+    ".DS_Store",
+    "__mocks__",
+    "__mock__"
+  ],
+  "searchPatterns": ["it\\("],
+  "entries": 24,
+  "totalCount": { "it\\(": 68 },
+  "data": {
+    "./repos/pre-refactoring/src/App.test.tsx": { "it\\(": 1 },
+    "./repos/pre-refactoring/src/pages/CDP/index.test.tsx": { "it\\(": 1 },
+    "./repos/pre-refactoring/src/pages/Example/index.test.tsx": { "it\\(": 3 },
+    "./repos/pre-refactoring/src/pages/PDP/index.test.tsx": { "it\\(": 3 },
+    "./repos/pre-refactoring/src/pages/PDP/components/AdditionalInformationDrawer/index.test.tsx": {
+      "it\\(": 1
+    },
+    "./repos/pre-refactoring/src/pages/PDP/components/ComponentSKUs/index.test.tsx": {
+      "it\\(": 1
+    },
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductDeliveryMethods/index.test.tsx": {
+      "it\\(": 1
+    },
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductDescription/index.test.tsx": {
+      "it\\(": 2
+    },
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductDimensions/index.test.tsx": {
+      "it\\(": 1
+    },
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductGallery/index.test.tsx": {
+      "it\\(": 5
+    },
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductZipcode/index.test.tsx": {
+      "it\\(": 2
+    },
+    "./repos/pre-refactoring/src/react-errors/ErrorBoundary.test.tsx": {
+      "it\\(": 6
+    },
+    "./repos/pre-refactoring/src/react-errors/useErrorHandler.test.tsx": {
+      "it\\(": 1
+    },
+    "./repos/pre-refactoring/src/routes/index.test.tsx": { "it\\(": 2 },
+    "./repos/pre-refactoring/src/shared/components/Footer/index.test.tsx": {
+      "it\\(": 2
+    },
+    "./repos/pre-refactoring/src/shared/components/Header/index.test.tsx": {
+      "it\\(": 6
+    },
+    "./repos/pre-refactoring/src/shared/components/ProductPrice/DeferredBilling/index.test.tsx": {
+      "it\\(": 2
+    },
+    "./repos/pre-refactoring/src/shared/components/ProductPrice/SitePricing/index.test.tsx": {
+      "it\\(": 6
+    },
+    "./repos/pre-refactoring/src/shared/components/ProductPrice/StorePricing/index.test.tsx": {
+      "it\\(": 3
+    },
+    "./repos/pre-refactoring/src/shared/components/ProductSearch/index.test.tsx": {
+      "it\\(": 7
+    },
+    "./repos/pre-refactoring/src/shared/components/SearchDrawer/index.test.tsx": {
+      "it\\(": 1
+    },
+    "./repos/pre-refactoring/src/shared/utils/index.test.ts": { "it\\(": 1 },
+    "./repos/pre-refactoring/src/store/slices/products/index.test.ts": {
+      "it\\(": 8
+    },
+    "./repos/pre-refactoring/src/store/slices/user/index.test.ts": {
+      "it\\(": 2
+    }
+  }
+}

@@ -3,12 +3,10 @@ export { getContentByPath } from './getContentByPath';
 export { generateReport } from './generateReport';
 export { parseFolderPaths } from './parseFolderPaths';
 export { parseArgs } from './parseArgs';
-export { searchFiles } from './searchFiles';
-export { countContentByPaths } from './countContentByPaths';
+export { getFiles } from './getFiles/getFiles';
+export { getContentLength } from './getContentLength';
 export { findMatches } from './findMatches';
 export { loadScenario } from './loadScenario';
-// FIXME
-export { __dirname, __filename } from './dirname';
 export { generateQuestions } from './generateQuestions';
 export { filterIngorePaths } from './filterIgnorePaths';
 export * from './node';
