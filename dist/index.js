@@ -2,6 +2,17 @@ import { readdir, loadScenario, generateQuestions } from './utils';
 const SCENARIOS_PATH = './src/scenarios';
 import prompt from 'prompts';
 const scenarios = await readdir(SCENARIOS_PATH);
+const { selectedScenarios } = await prompt({
+    type: 'multiselect',
+    message: 'Select any scenario',
+    instructions: false,
+    hint: 'Space - to toggle, Enter - to confirm',
+    name: 'selectedScenarios',
+    choices: scenarios.map((s) => ({
+        title: s,
+        value: s,
+    })),
+});
 const scenariosRunData = [];
 const commons = ['searchPaths'];
 const commonDataQuestions = commons.map((c) => ({
@@ -11,7 +22,7 @@ const commonDataQuestions = commons.map((c) => ({
     validate: (v) => (!v ? `${c} is required` : true),
 }));
 const commonData = await prompt(commonDataQuestions);
-for await (const scenario of scenarios) {
+for await (const scenario of selectedScenarios) {
     const scenarioName = scenario.split('.')[0];
     const [main, inputParams] = await loadScenario(scenarioName);
     const questions = generateQuestions(scenarioName, inputParams);

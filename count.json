@@ -1,0 +1,14 @@
+{
+  "searchPaths": ["./repos"],
+  "ignorePaths": [
+    "node_modules",
+    "dist",
+    ".git",
+    ".DS_Store",
+    "__mocks__",
+    "__mock__"
+  ],
+  "entries": 0,
+  "totalCount": 0,
+  "data": {}
+}
