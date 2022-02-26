@@ -2,6 +2,7 @@ import { readdir, loadScenario, generateQuestions } from './utils';
 const SCENARIOS_PATH = './src/scenarios';
 import prompt from 'prompts';
 const scenarios = await readdir(SCENARIOS_PATH);
+import pc from 'picocolors';
 const { selectedScenarios } = await prompt({
     type: 'multiselect',
     message: 'Select any scenario',
@@ -39,5 +40,9 @@ for (const scenario of scenariosRunData) {
     promises.push(scenario.main(scenario.inputData));
 }
 const res = await Promise.allSettled(promises);
-console.log(res);
+for (const r of res) {
+    r.status === 'fulfilled'
+        ? console.log(pc.green(`✔  ${r.value}`))
+        : console.log(pc.red(`⨯ ${r.reason}`));
+}
 //# sourceMappingURL=index.js.map
