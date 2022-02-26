@@ -6,6 +6,7 @@ import {
 } from '../../utils';
 import { GLOBAL_IGNORE_PATHS } from '../../constants';
 import { OptionalKeys, RequiredKeys } from 'types';
+
 const filename = new URL('', import.meta.url).pathname.split('/').at(-1);
 
 interface Params {
@@ -46,7 +47,7 @@ export const main = async (params: Params) => {
       fileNames: fileNames.filter((e) => !!e),
     });
 
-    const lengthsMap = getContentLength(files);
+    const lengthsMap = await getContentLength(files);
 
     const lengthsCount = Object.entries(lengthsMap).reduce((curr, next) => {
       const [_, lenght] = next;
@@ -57,6 +58,8 @@ export const main = async (params: Params) => {
       {
         searchPaths,
         ignorePaths: filtredIgnorePaths,
+        fileExtensions,
+        fileNames,
         entries: Object.keys(lengthsMap).length,
         totalCount: lengthsCount,
         data: lengthsMap,
