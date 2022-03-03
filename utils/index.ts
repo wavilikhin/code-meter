@@ -9,4 +9,5 @@ export { findMatches } from './findMatches';
 export { loadScenario } from './loadScenario';
 export { generateQuestions } from './generateQuestions';
 export { filterIngorePaths } from './filterIgnorePaths';
+export { countMedianValue } from './countMedianValue/countMedianValue';
 export * from './node';

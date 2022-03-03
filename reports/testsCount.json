@@ -1,22 +1,39 @@
 {
-  "data": [
-    "./repos/pre-refactoring/src/shared/components/Footer/index.test.tsx",
-    "./repos/pre-refactoring/src/shared/components/Footer/__snapshots__/index.test.tsx.snap",
-    "./repos/pre-refactoring/src/shared/components/Header/index.test.tsx",
-    "./repos/pre-refactoring/src/shared/components/ProductPrice/DeferredBilling/index.test.tsx",
-    "./repos/pre-refactoring/src/shared/components/ProductPrice/SitePricing/index.test.tsx",
-    "./repos/pre-refactoring/src/shared/components/ProductPrice/StorePricing/index.test.tsx",
-    "./repos/pre-refactoring/src/shared/components/ProductSearch/index.test.tsx",
-    "./repos/pre-refactoring/src/shared/components/SearchDrawer/index.test.tsx",
-    "./repos/pre-refactoring/src/pages/PDP/index.test.tsx",
-    "./repos/pre-refactoring/src/pages/PDP/components/AdditionalInformationDrawer/index.test.tsx",
-    "./repos/pre-refactoring/src/pages/PDP/components/ComponentSKUs/index.test.tsx",
-    "./repos/pre-refactoring/src/pages/PDP/components/ProductDeliveryMethods/index.test.tsx",
-    "./repos/pre-refactoring/src/pages/PDP/components/ProductDescription/index.test.tsx",
-    "./repos/pre-refactoring/src/pages/PDP/components/ProductDimensions/index.test.tsx",
-    "./repos/pre-refactoring/src/pages/PDP/components/ProductGallery/index.test.tsx",
-    "./repos/pre-refactoring/src/pages/PDP/components/ProductZipcode/index.test.tsx",
-    "./repos/pre-refactoring/src/pages/CDP/index.test.tsx"
+  "searchPaths": ["./repos"],
+  "ignorePaths": [
+    "node_modules",
+    "dist",
+    ".git",
+    ".DS_Store",
+    "__mocks__",
+    "__mock__"
   ],
-  "length": 17
+  "fileExtensions": [".tsx"],
+  "fileNames": [".test"],
+  "entries": 21,
+  "totalCount": 35721,
+  "averageCount": 1516,
+  "data": {
+    "./repos/pre-refactoring/src/App.test.tsx": 529,
+    "./repos/pre-refactoring/src/pages/CDP/index.test.tsx": 2945,
+    "./repos/pre-refactoring/src/pages/Example/index.test.tsx": 1516,
+    "./repos/pre-refactoring/src/pages/PDP/index.test.tsx": 2930,
+    "./repos/pre-refactoring/src/pages/PDP/components/AdditionalInformationDrawer/index.test.tsx": 738,
+    "./repos/pre-refactoring/src/pages/PDP/components/ComponentSKUs/index.test.tsx": 1758,
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductDeliveryMethods/index.test.tsx": 702,
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductDescription/index.test.tsx": 1793,
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductDimensions/index.test.tsx": 836,
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductGallery/index.test.tsx": 1652,
+    "./repos/pre-refactoring/src/pages/PDP/components/ProductZipcode/index.test.tsx": 1186,
+    "./repos/pre-refactoring/src/react-errors/ErrorBoundary.test.tsx": 2835,
+    "./repos/pre-refactoring/src/react-errors/useErrorHandler.test.tsx": 1094,
+    "./repos/pre-refactoring/src/routes/index.test.tsx": 967,
+    "./repos/pre-refactoring/src/shared/components/Footer/index.test.tsx": 467,
+    "./repos/pre-refactoring/src/shared/components/Header/index.test.tsx": 4328,
+    "./repos/pre-refactoring/src/shared/components/ProductPrice/DeferredBilling/index.test.tsx": 1581,
+    "./repos/pre-refactoring/src/shared/components/ProductPrice/SitePricing/index.test.tsx": 2323,
+    "./repos/pre-refactoring/src/shared/components/ProductPrice/StorePricing/index.test.tsx": 856,
+    "./repos/pre-refactoring/src/shared/components/ProductSearch/index.test.tsx": 3944,
+    "./repos/pre-refactoring/src/shared/components/SearchDrawer/index.test.tsx": 741
+  }
 }

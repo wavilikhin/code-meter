@@ -3,6 +3,7 @@ import {
   generateReport,
   filterIngorePaths,
   getContentLength,
+  countMedianValue,
 } from '../../utils';
 import { GLOBAL_IGNORE_PATHS } from '../../constants';
 import { OptionalKeys, RequiredKeys } from 'types';
@@ -54,6 +55,8 @@ export const main = async (params: Params) => {
       return curr + lenght;
     }, 0);
 
+    const averageCount = countMedianValue(Object.values(lengthsMap));
+
     await generateReport(
       {
         searchPaths,
@@ -62,6 +65,7 @@ export const main = async (params: Params) => {
         fileNames,
         entries: Object.keys(lengthsMap).length,
         totalCount: lengthsCount,
+        averageCount,
         data: lengthsMap,
       },
       reportName
