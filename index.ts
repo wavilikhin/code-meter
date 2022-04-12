@@ -1,9 +1,9 @@
 import { readdir, loadScenario, generateQuestions } from './utils';
-const SCENARIOS_PATH = './src/scenarios';
 import prompt from 'prompts';
-const scenarios = await readdir(SCENARIOS_PATH);
 import pc from 'picocolors';
 
+const SCENARIOS_PATH = './src/scenarios';
+const scenarios = await readdir(SCENARIOS_PATH);
 const { selectedScenarios } = await prompt({
   type: 'multiselect',
   message: 'Select any scenario',
@@ -15,10 +15,9 @@ const { selectedScenarios } = await prompt({
     value: s,
   })),
 });
-
 const scenariosRunData = [];
 
-const commons = ['searchPaths'];
+const commons = ['pathToRepo'];
 
 const commonDataQuestions: prompt.PromptObject[] = commons.map((c) => ({
   type: 'list',

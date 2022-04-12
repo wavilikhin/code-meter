@@ -9,7 +9,7 @@ import { OptionalKeys, RequiredKeys } from 'types';
 const filename = new URL('', import.meta.url).pathname.split('/').at(-1);
 
 interface Params {
-  searchPaths: string[];
+  pathToRepo: string[];
   searchPatterns: string[];
   fileExtensions?: string[];
   fileNames?: string[];
@@ -22,13 +22,13 @@ interface InputParams {
 }
 
 export const inputParams: InputParams = {
-  required: ['searchPaths', 'searchPatterns'],
+  required: ['pathToRepo', 'searchPatterns'],
   optional: ['fileExtensions', 'fileNames', 'ignorePaths', 'reportName'],
 };
 
 export const main = async (params: Params) => {
   const {
-    searchPaths,
+    pathToRepo: searchPaths,
     searchPatterns,
     fileExtensions = [],
     fileNames = [],
